@@ -122,13 +122,13 @@ describe('Authority Management Component', () => {
 
   describe('delete', () => {
     let ngbModal: NgbModal;
-    let deleteModalMock: any;
+    let deleteModalMock: unknown;
 
     beforeEach(() => {
       deleteModalMock = { componentInstance: {}, closed: new Subject() };
       // NgbModal is not a singleton using TestBed.inject.
       // ngbModal = TestBed.inject(NgbModal);
-      ngbModal = (comp as any).modalService;
+      ngbModal = (comp as unknown).modalService;
       jest.spyOn(ngbModal, 'open').mockReturnValue(deleteModalMock);
     });
 

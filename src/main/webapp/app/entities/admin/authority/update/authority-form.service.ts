@@ -16,9 +16,9 @@ type AuthorityFormGroupInput = IAuthority | PartialWithRequiredKeyOf<NewAuthorit
 
 type AuthorityFormDefaults = Pick<NewAuthority, 'name'>;
 
-type AuthorityFormGroupContent = {
+interface AuthorityFormGroupContent {
   name: FormControl<IAuthority['name'] | NewAuthority['name']>;
-};
+}
 
 export type AuthorityFormGroup = FormGroup<AuthorityFormGroupContent>;
 

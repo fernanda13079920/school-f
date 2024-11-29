@@ -138,7 +138,14 @@ describe('LoginComponent', () => {
 
     it('should stay on login form and show error message on login error', () => {
       // GIVEN
-      mockLoginService.login = jest.fn(() => throwError(() => {}));
+      mockLoginService.login = jest.fn(() =>
+        throwError(
+          // No operation is needed here
+          () => {
+            /* intentionally empty */
+          },
+        ),
+      );
 
       // WHEN
       comp.login();

@@ -10,7 +10,7 @@ export class AuthInterceptor implements HttpInterceptor {
   private readonly stateStorageService = inject(StateStorageService);
   private readonly applicationConfigService = inject(ApplicationConfigService);
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const serverApiUrl = this.applicationConfigService.getEndpointFor('');
     if (!request.url || (request.url.startsWith('http') && !(serverApiUrl && request.url.startsWith(serverApiUrl)))) {
       return next.handle(request);

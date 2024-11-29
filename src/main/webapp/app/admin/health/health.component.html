@@ -2,7 +2,7 @@
   <h2>
     <span id="health-page-heading" data-cy="healthPageHeading" jhiTranslate="health.title">Health Checks</span>
 
-    <button class="btn btn-primary float-end" (click)="refresh()">
+    <button class="btn btn-primary float-end" (click)="refresh()" (keyup.enter)="refresh()" tabindex="0">
       <fa-icon icon="sync"></fa-icon> <span jhiTranslate="health.refresh.button">Refresh</span>
     </button>
   </h2>
@@ -47,7 +47,12 @@
               </td>
               <td class="text-center">
                 @if (componentHealth.value!.details) {
-                  <a class="hand" (click)="showHealth({ key: componentHealth.key, value: componentHealth.value! })">
+                  <a
+                    class="hand"
+                    tabindex="0"
+                    (click)="showHealth({ key: componentHealth.key, value: componentHealth.value! })"
+                    (keydown.enter)="showHealth({ key: componentHealth.key, value: componentHealth.value! })"
+                  >
                     <fa-icon icon="eye"></fa-icon>
                   </a>
                 }

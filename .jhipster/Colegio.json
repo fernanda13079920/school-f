@@ -1,0 +1,34 @@
+{
+  "annotations": {},
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "codigo",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "area",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "direccion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "EstadoColegio",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Abierta,Cerrada,Vacaciones_de_Fin_de_Ano,Vacaciones_de_Invierno"
+    }
+  ],
+  "name": "Colegio",
+  "relationships": []
+}

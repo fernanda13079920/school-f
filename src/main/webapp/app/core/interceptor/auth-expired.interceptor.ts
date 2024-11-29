@@ -13,7 +13,7 @@ export class AuthExpiredInterceptor implements HttpInterceptor {
   private readonly stateStorageService = inject(StateStorageService);
   private readonly router = inject(Router);
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       tap({
         error: (err: HttpErrorResponse) => {

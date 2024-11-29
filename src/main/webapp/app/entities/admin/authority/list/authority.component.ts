@@ -100,7 +100,7 @@ export class AuthorityComponent implements OnInit {
 
   protected queryBackend(): Observable<EntityArrayResponseType> {
     this.isLoading = true;
-    const queryObject: any = {
+    const queryObject: unknown = {
       sort: this.sortService.buildSortParam(this.sortState()),
     };
     return this.authorityService.query(queryObject).pipe(tap(() => (this.isLoading = false)));

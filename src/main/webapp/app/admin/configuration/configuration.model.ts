@@ -6,14 +6,14 @@ export type Contexts = Record<string, Context>;
 
 export interface Context {
   beans: Beans;
-  parentId?: any;
+  parentId?: unknown;
 }
 
 export type Beans = Record<string, Bean>;
 
 export interface Bean {
   prefix: string;
-  properties: any;
+  properties: unknown;
 }
 
 export interface Env {

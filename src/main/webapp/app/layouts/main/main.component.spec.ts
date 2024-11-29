@@ -20,7 +20,7 @@ describe('MainComponent', () => {
   let translateService: TranslateService;
   let mockAccountService: AccountService;
   let ngZone: NgZone;
-  const routerState: any = { snapshot: { root: { data: {} } } };
+  const routerState: unknown = { snapshot: { root: { data: {} } } };
   let router: Router;
   let document: Document;
 

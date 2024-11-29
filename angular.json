@@ -95,6 +95,12 @@
             "configPath": "jest.conf.js",
             "tsConfig": "tsconfig.spec.json"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/main/webapp/**/*.ts", "src/main/webapp/**/*.html"]
+          }
         }
       }
     }
@@ -105,6 +111,8 @@
       "path": "./target/angular/",
       "environment": "all"
     },
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false,
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

@@ -8,7 +8,7 @@ export type FileLoadErrorType = 'not.image' | 'could.not.extract';
 export interface FileLoadError {
   message: string;
   key: FileLoadErrorType;
-  params?: any;
+  params?: unknown;
 }
 
 /**

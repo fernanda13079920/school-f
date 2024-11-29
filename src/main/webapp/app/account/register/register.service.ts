@@ -10,7 +10,7 @@ export class RegisterService {
   private readonly http = inject(HttpClient);
   private readonly applicationConfigService = inject(ApplicationConfigService);
 
-  save(registration: Registration): Observable<{}> {
+  save(registration: Registration): Observable<object> {
     return this.http.post(this.applicationConfigService.getEndpointFor('api/register'), registration);
   }
 }

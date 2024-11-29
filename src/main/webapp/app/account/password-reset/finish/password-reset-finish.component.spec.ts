@@ -81,7 +81,14 @@ describe('PasswordResetFinishComponent', () => {
   it('should notify of generic error', inject(
     [PasswordResetFinishService],
     fakeAsync((service: PasswordResetFinishService) => {
-      jest.spyOn(service, 'save').mockReturnValue(throwError(() => {}));
+      jest.spyOn(service, 'save').mockReturnValue(
+        throwError(
+          // No operation is needed here
+          () => {
+            /* intentionally empty */
+          },
+        ),
+      );
       comp.passwordForm.patchValue({
         newPassword: 'password',
         confirmPassword: 'password',

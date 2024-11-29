@@ -15,7 +15,7 @@ export default class HealthModalComponent {
 
   private readonly activeModal = inject(NgbActiveModal);
 
-  readableValue(value: any): string {
+  readableValue(value: unknown): string {
     if (this.health?.key === 'diskSpace') {
       // Should display storage space in an human readable unit
       const val = value / 1073741824;

@@ -8,9 +8,9 @@ export class SortService {
     sensitivity: 'base',
   });
 
-  public startSort({ predicate, order }: Required<SortState>, fallback?: Required<SortState>): (a: any, b: any) => number {
+  public startSort({ predicate, order }: Required<SortState>, fallback?: Required<SortState>): (a: unknown, b: unknown) => number {
     const multiply = order === 'desc' ? -1 : 1;
-    return (a: any, b: any) => {
+    return (a: unknown, b: unknown) => {
       const compare = this.collator.compare(a[predicate], b[predicate]);
       if (compare === 0 && fallback) {
         return this.startSort(fallback)(a, b);
@@ -23,7 +23,7 @@ export class SortService {
     if (sortParam?.includes(',')) {
       const split = sortParam.split(',');
       if (split[0]) {
-        return { predicate: split[0], order: split[1] as any };
+        return { predicate: split[0], order: split[1] as unknown };
       }
     }
     return { predicate: sortParam?.length ? sortParam : undefined };

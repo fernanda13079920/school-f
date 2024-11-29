@@ -24,6 +24,7 @@
             <td>
               <button
                 (click)="changeLevel(logger.name, 'TRACE')"
+                (keydown.enter)="changeLevel(logger.name, 'TRACE')"
                 [ngClass]="logger.level === 'TRACE' ? 'btn-primary' : 'btn-light'"
                 class="btn btn-sm"
               >

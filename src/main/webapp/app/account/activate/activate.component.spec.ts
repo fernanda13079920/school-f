@@ -57,7 +57,14 @@ describe('ActivateComponent', () => {
   it('should set set error to true upon activation failure', inject(
     [ActivateService],
     fakeAsync((service: ActivateService) => {
-      jest.spyOn(service, 'get').mockReturnValue(throwError(() => {}));
+      jest.spyOn(service, 'get').mockReturnValue(
+        throwError(
+          // No operation is needed here
+          () => {
+            /* intentionally empty */
+          },
+        ),
+      );
 
       comp.ngOnInit();
       tick();

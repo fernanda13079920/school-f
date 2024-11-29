@@ -25,12 +25,12 @@ export class AuthorityService {
     return this.http.get<IAuthority>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
-  query(req?: any): Observable<EntityArrayResponseType> {
+  query(req?: unknown): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http.get<IAuthority[]>(this.resourceUrl, { params: options, observe: 'response' });
   }
 
-  delete(id: string): Observable<HttpResponse<{}>> {
+  delete(id: string): Observable<HttpResponse<object>> {
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 

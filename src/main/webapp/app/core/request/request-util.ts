@@ -1,6 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 
-export const createRequestOption = (req?: any): HttpParams => {
+export const createRequestOption = (req?: unknown): HttpParams => {
   let options: HttpParams = new HttpParams();
 
   if (req) {

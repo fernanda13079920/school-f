@@ -85,7 +85,14 @@ describe('PasswordComponent', () => {
 
   it('should notify of error if change password fails', () => {
     // GIVEN
-    jest.spyOn(service, 'save').mockReturnValue(throwError(() => {}));
+    jest.spyOn(service, 'save').mockReturnValue(
+      throwError(
+        // No operation is needed here
+        () => {
+          /* intentionally empty */
+        },
+      ),
+    );
     comp.passwordForm.patchValue({
       newPassword: 'myPassword',
       confirmPassword: 'myPassword',

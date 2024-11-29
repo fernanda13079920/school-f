@@ -21,7 +21,7 @@ export class AccountService {
   private readonly router = inject(Router);
   private readonly applicationConfigService = inject(ApplicationConfigService);
 
-  save(account: Account): Observable<{}> {
+  save(account: Account): Observable<object> {
     return this.http.post(this.applicationConfigService.getEndpointFor('api/account'), account);
   }
 

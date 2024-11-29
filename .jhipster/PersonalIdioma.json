@@ -1,0 +1,26 @@
+{
+  "annotations": {},
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "estadoEscribe",
+      "fieldType": "EstadoLenguaje",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Muy_Bien,Bien,Mal,No"
+    },
+    {
+      "fieldName": "estadoHabla",
+      "fieldType": "EstadoLenguaje",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Muy_Bien,Bien,Mal,No"
+    },
+    {
+      "fieldName": "estadoLee",
+      "fieldType": "EstadoLenguaje",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Muy_Bien,Bien,Mal,No"
+    }
+  ],
+  "name": "PersonalIdioma",
+  "relationships": []
+}
